@@ -1,0 +1,44 @@
+
+<div class="row mb-3">
+  <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-1">
+    <div class="input-group">
+      <span class="input-group-text">Estado</span>
+      <select [(ngModel)]="filtros.estado" class="form-control" name="">
+        <option value="Habilitado">Habilitados</option>
+        <option value="Deshabilitado">Deshabilitados</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-8 col-lg-6 col-xl-5 mb-1">
+    <div class="input-group">
+      <span class="input-group-text">B. General</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Razón Social / N. comercial / Identificación"
+        [(ngModel)]="filtros.busqueda"
+        (keyup.enter)="filtrar()"
+      />
+    </div>
+  </div>
+  <div class="col">
+    <button
+      (click)="filtrar()"
+      ngbTooltip="Aplicar filtros"
+      type="submit"
+      class="btn btn-primary float-md-end float-lg-start"
+    >
+      <i class="fas fa-search"></i>
+    </button>
+
+    <button
+      *ngIf="filtros.busqueda || filtros.estado != 'Habilitado'"
+      (click)="restoreFiltros()"
+      ngbTooltip="Restaurar filtros"
+      type="button"
+      class="btn btn-secondary mx-1 float-lg-end float-xl-start"
+    >
+      <i class="fas fa-sync"></i>
+    </button>
+  </div>
+</div>

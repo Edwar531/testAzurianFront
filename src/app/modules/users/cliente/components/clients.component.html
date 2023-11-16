@@ -1,0 +1,53 @@
+<div class="fadeIn">
+  <div class="row mb-2">
+    <div class="col-12">
+      <button
+        (click)="openModal(modalAdd)"
+        type="button"
+        class="btn btn-primary float-end"
+      >
+        <i class="fas fa-plus"></i> Nuevo
+      </button>
+      <h4 class="">CLIENTES</h4>
+    </div>
+  </div>
+
+  <app-filtros-clientes
+    [filtros]="filtros"
+    (sendToF)="receivedToChild($event)"
+  ></app-filtros-clientes>
+
+  <app-table
+    [filtros]="filtros"
+    [url]="table.url"
+    [actions]="table.actions"
+    [columns]="table.columns"
+    (sendToF)="receivedToChild($event)"
+  ></app-table>
+</div>
+
+<ng-template #modalAdd let-modal>
+  <app-add-cliente
+    [url]="table.url"
+    [edit]="edit"
+    (sendToF)="receivedToChild($event)"
+  ></app-add-cliente>
+</ng-template>
+
+<ng-template #modalEnableDisable let-modal>
+  <app-modal-disable-enable
+    [enable]="enable"
+    [url]="table.url"
+    [edit_id]="edit?.id"
+    (sendToF)="receivedToChild($event)"
+  ></app-modal-disable-enable>
+</ng-template>
+
+<ng-template #modalDelete let-modal>
+  <app-modal-delete
+    [enable]="enable"
+    [url]="table.url"
+    [edit_id]="edit?.id"
+    (sendToF)="receivedToChild($event)"
+  ></app-modal-delete>
+</ng-template>

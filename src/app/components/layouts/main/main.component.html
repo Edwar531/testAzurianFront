@@ -1,0 +1,23 @@
+<!-- aca se tiene que agregar la etiqueta body en vez de un div para que las clases del template Admin Lte funcionen correctamente, si se agregan las clases en el body de index html falla -->
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    <!-- Navbar -->
+    <app-navbar></app-navbar>
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <a routerLink="/" class="brand-link">
+        <div class="brand-image text-resume text-center pt-2 fadeIn">P A</div>
+        <div class="brand-text font-weight-light text-center">
+          PRUEBA AZURIAN
+        </div>
+      </a>
+      <!-- Sidebar -->
+      <app-sidebar></app-sidebar>
+    </aside>
+    <!-- Content -->
+    <div class="content-wrapper">
+      <div class="pt-2 pb-3 px-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</body>

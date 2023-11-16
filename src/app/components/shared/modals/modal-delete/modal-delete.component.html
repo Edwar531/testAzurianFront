@@ -1,0 +1,35 @@
+<!-- {{ enable }} -->
+<div class="relative">
+  <div class="loader-content" *ngIf="loading">
+    <div></div>
+  </div>
+
+  <div class="modal-header bg-danger">
+    <h4 class="modal-title text-white">!Atención</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="sendToFather('closeModal')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <h6 class="text-center">
+      ¿Esta segur@ de eliminar este elemento?
+    </h6>
+    <p class='text-center'>El elemento sera eliminado de forma permanente.</p>
+  </div>
+  <div class="modal-footer">
+    <button
+      appAutofocus
+      type="button"
+      class="btn btn-light"
+      (click)="sendToFather('closeModal')"
+    >
+      Cancelar
+    </button>
+    <button type="button" class="btn btn-danger" (click)="delete()">
+      Aceptar
+    </button>
+  </div>
+</div>

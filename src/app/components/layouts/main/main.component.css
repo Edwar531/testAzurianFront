@@ -1,0 +1,19 @@
+.brand-link .text-resume {
+  display: none;
+  font-weight: 400;
+}
+
+.sidebar-collapse .brand-link .text-resume {
+  display: block;
+}
+
+.logo {
+  height: 55.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-text {
+  font-weight: 400 !important;
+}

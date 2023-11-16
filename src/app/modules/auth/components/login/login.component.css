@@ -1,0 +1,30 @@
+.h100vh {
+  height: 100vh;
+  width: 100%;
+}
+
+.form {
+  position: fixed;
+  width: 400px;
+  background: red;
+  right: 0;
+  height: 100vh;
+}
+
+.img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.container-form {
+  padding: 0 50px 0 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 3px #4f9fe9 solid;
+}
+
+.text-shadow{
+  text-shadow: 1px 1px 1px rgb(189, 189, 189);
+}

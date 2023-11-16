@@ -1,0 +1,46 @@
+<!-- {{ enable }} -->
+<div class="relative">
+  <div class="loader-content" *ngIf="loading">
+    <div></div>
+  </div>
+
+  <div
+    class="modal-header"
+    [ngClass]="{ 'bg-warning': !enable, 'bg-success': enable }"
+  >
+    <h4 class="modal-title text-white">
+      <span *ngIf="enable"> <i class="fas fa-check"></i> Habilitar</span>
+      <span *ngIf="!enable"> <i class="fas fa-ban"></i> Deshabilitar</span>
+    </h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="sendToFather('closeModal')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <h6 class="text-center">
+      ¿Esta segur@ de <span *ngIf="enable">habilitar</span>
+      <span *ngIf="!enable">deshabilitar</span> este elemento?
+    </h6>
+  </div>
+  <div class="modal-footer">
+    <button
+      appAutofocus
+      type="button"
+      class="btn btn-light"
+      (click)="sendToFather('closeModal')"
+    >
+      Cancelar
+    </button>
+    <button
+      type="button"
+      class="btn"
+      [ngClass]="{ 'btn-warning': !enable, 'btn-success': enable }"
+      (click)="disable()"
+    >
+      Aceptar
+    </button>
+  </div>
+</div>

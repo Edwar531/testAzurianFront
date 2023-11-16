@@ -1,0 +1,61 @@
+<div class="row h100vh fadeIn">
+  <div class="d-none  d-lg-block  col-md-6 col-lg-7 col-xl-8 col-xxl-7 px-0">
+    <img class="img" src="/assets/img-default/codificando.jpg" alt="" />
+  </div>
+  <div class="col-md-12  col-md-6 col-lg-5 col-xl-4 col-xxl-3 container-form">
+    <div class="loader-content" *ngIf="loading">
+      <div></div>
+    </div>
+
+    <div style="width: 350px">
+      <div class="m-auto" style="max-width: 200px">
+        <h4 class="text-left m-0 text-primary text-shadow">PRUEBA </h4>
+        <h2 class="text-right m-0 text-orange text-shadow">AZURIAN</h2>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <div class="" >
+          <div class="mb-3">
+            <label for="">Usuario</label>
+
+            <div class="input-group">
+              <span class="input-group-text"> <i class="fas fa-user"></i></span>
+              <input
+                autocomplete="off"
+                maxlength="60"
+                formControlName="name"
+                class="form-control"
+                type="text"
+              />
+            </div>
+
+            <div *ngIf="validate('name').valid" class="text-error">
+              {{ validate("name").error }}
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="">Contraseña</label>
+            <div class="input-group">
+              <span class="input-group-text"> <i class="fas fa-key"></i></span>
+              <input
+                maxlength="30"
+                formControlName="password"
+                class="form-control"
+                type="password"
+                autocomplete="off"
+              />
+            </div>
+
+            <div *ngIf="validate('password').valid" class="text-error">
+              {{ validate("password").error }}
+            </div>
+          </div>
+
+          <button class="btn btn-lg btn-primary btn-block mt-4" type="submit">
+            Iniciar sesión
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
