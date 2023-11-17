@@ -1,5 +1,5 @@
 # testAzurianFront
-Front para prueba ingreso empresa Azurian
+Front para ingreso empresa Azurian
 
 ### Instrucciones preparación  
 Abrir terminal en la carpeta principal y ejecutar el comando npm install
